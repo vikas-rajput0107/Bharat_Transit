@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@layer base {
+  :root {
+    --bg-canvas: #090c10;
+    --bg-panel: #0e131b;
+    --bg-card: #131a24;
+    --bg-card-hover: #182230;
+    
+    --border-subtle: #1b2432;
+    --border-strong: #2A384C;
+    --border-accent: #2563eb;
+    
+    --text-primary: #f0f4f8;
+    --text-secondary: #8a99ad;
+    --text-muted: #4e5f76;
+    
+    --accent-primary: #2563eb;
+    --accent-sky: #38bdf8;
+    
+    --signal-green: #10b981;
+    --signal-amber: #f59e0b;
+    --signal-red: #f43f5e;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4 {
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Tabular Numeric Utilities */
+.font-numeric {
+  font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Hairline Grid & Panel Utilities */
+.panel-base {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+}
+
+.panel-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.panel-card:hover {
+  border-color: var(--border-strong);
+  background-color: var(--bg-card-hover);
+}
+
+/* Leaflet Map Customizations for Ultra Clean Dark Theme */
+.leaflet-container {
+  background-color: #090c10 !important;
+  font-family: inherit !important;
+}
+
+.dark-tiles .leaflet-tile {
+  filter: brightness(0.72) contrast(1.2) hue-rotate(200deg) invert(0.9) saturate(0.7);
+}
+
+.leaflet-popup-content-wrapper {
+  background: #0e131b !important;
+  color: #f0f4f8 !important;
+  border: 1px solid #1b2432 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.6) !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+
+.leaflet-popup-tip {
+  background: #0e131b !important;
+  border-right: 1px solid #1b2432 !important;
+  border-bottom: 1px solid #1b2432 !important;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #090c10;
+}
+::-webkit-scrollbar-thumb {
+  background: #1b2432;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
